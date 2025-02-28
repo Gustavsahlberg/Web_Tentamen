@@ -2,12 +2,12 @@
 
 
 {% block content %}
-<div class="container mt-5 contact">
+<div class="card shadow-sm mt-5 mx-auto text-center" style="max-width: 400px;">
 <h1 class="section-title ">Kontakta oss</h1>
-<form method="post" class="form ">
+<form method="post" class="p-3 ">
     {{form.hidden_tag() }}
-    <div class="col-12">
-        {{form.name.label (class="form-label")}}
+    <div class="form-group">
+        {{form.name.label }}
         {{form.name (class="input")}}
         {% for error in form.name.errors %}
         <div class="error">
@@ -15,8 +15,8 @@
         </div>
         {% endfor %}
     </div>
-    <div class="col-12">
-        {{form.email.label (class="form-label")}}
+    <div class="form-group">
+        {{form.email.label}}
         {{form.email (class="input")}}
         {% for error in form.email.errors %}
             <div class="error">
@@ -24,8 +24,8 @@
             </div>
         {% endfor %}
     </div>
-    <div class="col-12">
-        {{form.telefon.label (class="form-label")}}
+    <div class="form-group">
+        {{form.telefon.label }}
         {{form.telefon (class="input")}}
         {% for error in form.telefon.errors %}
             <div class="error">
@@ -33,8 +33,8 @@
             </div>
         {% endfor %}
     </div>
-    <div class="col-12">
-        {{form.välj_ärende.label (class="form-label")}}
+    <div class="form-group">
+        {{form.välj_ärende.label }}
         {{form.välj_ärende}}
         {% for error in form.välj_ärende.errors %}
             <div class="error">
@@ -42,8 +42,8 @@
             </div>
         {% endfor %}
     </div>
-    <div class="col-12">
-        {{form.contact_msg.label (class="form-label")}}<br>
+    <div class="form-group">
+        {{form.contact_msg.label}}<br>
         {{form.contact_msg (class="input textarea")}}
         {% for error in form.contact_msg.errors %}
         <div class="error">

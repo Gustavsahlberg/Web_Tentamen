@@ -23,13 +23,16 @@ def contactUs():
     form = ContactForm()
     if form.validate_on_submit():
         if form.email.data == "" and form.telefon.data == "":
-            return render_template("fel.html")
+            return render_template("fel.html", felmedellande="Du måste skicka med antingen telefonnummer eller mail!")
+        elif len(form.contact_msg.data) >= 512:
+            return render_template("fel.html", felmedellande="För långt medelande, Max 512 chars")
         nyKontakt = Contact()
         nyKontakt.ContactName = form.name.data
         if form.email.data == "":
             nyKontakt.ContactTelefon = form.telefon.data
         elif form.telefon == "":
             nyKontakt.ContactMail = form.email.data
+
         nyKontakt.ContactÄrende = form.välj_ärende.data
         nyKontakt.ContactMsg = form.contact_msg.data
         db.session.add(nyKontakt)
