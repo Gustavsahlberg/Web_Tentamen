@@ -1,0 +1,33 @@
+
+{% extends "baseTemplate.html" %}
+
+
+{% block content %}
+
+<table class="styled-table">
+    <thead>
+        <tr>
+            <th>Name
+
+            </th>
+            <th>Rating
+
+            </th>
+            <th>Pris
+
+            </th>
+
+        </tr>
+    </thead>
+<tbody>
+    {% for prod in alla_produkter %}
+        <tr>
+            <td>{{ prod.ProductName }}</td>
+            <td>{{ prod.Rating }}</td>
+            <td>{{ prod.Price }}</td>
+        </tr>
+    {% endfor %}
+</tbody>
+</table>
+
+{% endblock  %}
